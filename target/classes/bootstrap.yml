@@ -1,2 +1,2 @@
 encrypt:
-  key: cambiar1234
+  key: ${ENCRYPT_KEY}
