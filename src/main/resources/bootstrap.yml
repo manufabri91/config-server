@@ -1,8 +1,7 @@
 encrypt:
   key: ${ENCRYPT_KEY}
- spring:
-  cloud:
-    config:
-      server:
-        encrypt:
-          enabled: false
+spring:
+ cloud:
+  config:
+   server:
+    encrypt.enabled: false
