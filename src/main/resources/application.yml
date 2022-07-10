@@ -6,7 +6,7 @@ spring:
     config:
       server:
         encrypt:
-          enabled: false
+          enabled: true
         git:
           uri: https://github.com/manufabri91/api-config-store
           search-paths:
