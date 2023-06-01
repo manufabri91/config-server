@@ -1,2 +1,2 @@
 # java-config-server
-Java configuration server
+Java config server
