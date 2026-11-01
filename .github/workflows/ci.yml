@@ -51,7 +51,7 @@ jobs:
           PY
       - name: Retain selected dependency inventory and scan
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: config-server-dependency-security
           path: security-reports/
@@ -71,7 +71,7 @@ jobs:
         run: mvn -B verify
       - name: Retain test evidence
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: config-server-test-reports
           path: target/surefire-reports/
@@ -100,7 +100,7 @@ jobs:
         run: trivy image --format cyclonedx --output image-sbom.cdx.json config-server:security
       - name: Retain image evidence
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: config-server-security-reports
           path: |
