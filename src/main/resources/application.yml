@@ -5,7 +5,18 @@ spring:
   cloud:
     config:
       server:
+        encrypt:
+          enabled: false
         git:
           uri: https://github.com/manufabri91/api-config-store
+          default-label: master
           search-paths:
           - '*api'
+
+encrypt:
+  key: ${ENCRYPT_KEY}
+
+config:
+  crypto:
+    username: ${CONFIG_CRYPTO_USERNAME:config-admin}
+    password: ${CONFIG_CRYPTO_PASSWORD:}
