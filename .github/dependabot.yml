@@ -4,11 +4,21 @@ updates:
     directory: /
     schedule:
       interval: weekly
+    # Major upgrades require a planned compatibility review.
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
   - package-ecosystem: docker
     directory: /
     schedule:
       interval: weekly
+    # Maven tags also encode Java/Alpine variants; maintain these images manually.
+    # The weekly image vulnerability scan remains enabled in ci.yml.
+    open-pull-requests-limit: 0
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: weekly
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
